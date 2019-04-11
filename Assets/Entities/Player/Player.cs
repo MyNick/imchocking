@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ public class Player : MonoBehaviour
 
     public float movementSpeed = 10;
 
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +18,19 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector2 speed = new Vector2(0, 0);
+        playerMove();
+        followMouse();
+    }
+
+    private void followMouse()
+    {
         
-        if(Input.GetKey(KeyCode.UpArrow))
+    }
+
+    void playerMove()
+    {
+        Vector2 speed = new Vector2(0, 0);
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             speed.y += 1;
         }
